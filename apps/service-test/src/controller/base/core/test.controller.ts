@@ -12,6 +12,6 @@ export class TodoController extends CrudController<TodoEntity>{
 	@Route('get', '/todo-test')
 	async todotest(ctx: KolpServiceContext) {
 		const body = ctx.request.body
-		return "test"
+		return "test-semantic"
 	}
 }
