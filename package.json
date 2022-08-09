@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "commit": "git-cz"
   },
   "private": true,
   "dependencies": {
@@ -51,14 +52,15 @@
     "@types/jest": "27.4.1",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/koa": "^2.11.6",
-    "@types/koa-bodyparser": "^4.3.0",
     "@types/koa__router": "^8.0.3",
+    "@types/koa-bodyparser": "^4.3.0",
     "@types/luxon": "^1.25.0",
     "@types/mustache": "^4.1.2",
     "@types/node": "^14.14.6",
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^8.2.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -66,6 +68,7 @@
     "jest": "27.5.1",
     "nx": "14.5.4",
     "prettier": "^2.6.2",
+    "semantic-release": "^19.0.3",
     "serverless": "^2.15.0",
     "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
@@ -78,11 +81,15 @@
     "ts-node": "^10.9.1",
     "typescript": "~4.7.2",
     "webpack": "^5.4.0",
-    "webpack-node-externals": "^2.5.2",
-    "semantic-release": "^19.0.3"
+    "webpack-node-externals": "^2.5.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/NonthawatP97/nonthawat-sematic-release-test.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
