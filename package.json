@@ -46,6 +46,7 @@
     "@nrwl/linter": "14.5.4",
     "@nrwl/node": "^14.5.4",
     "@nrwl/workspace": "14.5.4",
+    "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@serverless/typescript": "^2.12.0",
     "@types/aws-lambda": "^8.10.64",
@@ -100,14 +101,30 @@
     ]
   },
   "plugins": [
-    ["@semantic-release/release-notes-generator", {
-      "preset": "angular",
-      "parserOpts": {
-        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "angular",
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES",
+            "BREAKING"
+          ]
+        },
+        "writerOpts": {
+          "commitsSort": [
+            "subject",
+            "scope"
+          ]
+        }
       },
-      "writerOpts": {
-        "commitsSort": ["subject", "scope"]
-      }
-    }]
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ]
+    ]
   ]
 }
