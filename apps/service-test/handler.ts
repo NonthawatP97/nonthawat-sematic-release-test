@@ -6,7 +6,7 @@ import { KolpServiceState,KolpServiceContext,withJson, makeServerWithRouter} fro
 const app = new Koa();
 
 export default makeServerWithRouter((router)=>{
-	console.log("work")
+	console.log("work work")
 	router.prefix('/cpf')
 		.use(cors())
 		.use(withJson())
