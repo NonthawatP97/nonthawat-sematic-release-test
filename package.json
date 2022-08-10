@@ -46,14 +46,15 @@
     "@nrwl/linter": "14.5.4",
     "@nrwl/node": "^14.5.4",
     "@nrwl/workspace": "14.5.4",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@serverless/typescript": "^2.12.0",
     "@types/aws-lambda": "^8.10.64",
     "@types/bluebird": "^3.5.34",
     "@types/jest": "27.4.1",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/koa": "^2.11.6",
-    "@types/koa__router": "^8.0.3",
     "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa__router": "^8.0.3",
     "@types/luxon": "^1.25.0",
     "@types/mustache": "^4.1.2",
     "@types/node": "^14.14.6",
@@ -91,5 +92,22 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
+  },
+  "plugins": [
+    ["@semantic-release/release-notes-generator", {
+      "preset": "angular",
+      "parserOpts": {
+        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+      },
+      "writerOpts": {
+        "commitsSort": ["subject", "scope"]
+      }
+    }]
+  ]
 }
